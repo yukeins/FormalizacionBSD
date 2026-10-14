@@ -1,0 +1,22 @@
+# Target binaries and build trees
+target/
+engine_rust/target/
+*.olean
+*.ilean
+*.c
+proofs_lean/.lake/
+
+# LaTeX auxiliary files
+monograph/*.aux
+monograph/*.log
+monograph/*.out
+monograph/*.toc
+monograph/*.synctex.gz
+monograph/*.fls
+monograph/*.fdb_latexmk
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*~
