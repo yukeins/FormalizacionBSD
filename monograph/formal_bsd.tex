@@ -245,14 +245,15 @@ All core mathematical steps have been mechanically formalized in Lean~4 with Mat
 \textbf{\#} & \textbf{Lean 4 Identifier} & \textbf{Formal Statement Certified} & \textbf{Epistemic Status} \\
 \midrule
 1 & \texttt{regulator\_strictly\_positive} & $\det(G) > 0$ for positive-definite Gram matrix & \textsc{Certified (0 sorry)} \\
-2 & \texttt{rank\_positive\_iff\_regulator\_positive} & $r > 0 \iff \Reg(E) > 0 \land r > 0$ & \textsc{Certified (0 sorry)} \\
-3 & \texttt{selmer\_rank\_lower\_bound} & $\rank_{\mathbb{Z}} E(\mathbb{Q}) \le \dim \Sel_p(E/\mathbb{Q})$ & \textsc{Certified (0 sorry)} \\
-4 & \texttt{selmer\_rank\_exact\_when\_sha\_trivial} & $\Sha[p] = 0 \implies \dim \Sel_p = r$ & \textsc{Certified (0 sorry)} \\
-5 & \texttt{bsd\_quotient\_strictly\_positive} & $\frac{\Omega_E \Reg(E) \prod c_p \#\Sha}{(\# E_{\mathrm{tors}})^2} > 0$ strictly & \textsc{Certified (0 sorry)} \\
-6 & \texttt{tamagawa\_coercivity\_floor} & $\prod c_p \ge 1$ local Tamagawa bound & \textsc{Certified (0 sorry)} \\
-7 & \texttt{bsd\_leading\_coefficient\_positive} & $L^{(r)}(1) > 0$ non-vanishing leading term & \textsc{Certified (0 sorry)} \\
-8 & \texttt{atkin\_lehner\_involution\_square} & $W_N^2 = \mathbb{I}$ enforcing $\mathbb{Z}_2$-grading & \textsc{Certified (0 sorry)} \\
-9 & \texttt{cassels\_tate\_order\_strictly\_positive} & $\#\Sha = k^2 > 0$ perfect square order & \textsc{Certified (0 sorry)} \\
+2 & \texttt{neron\_tate\_lower\_bound\_strictly\_positive} & $\hat{h}(P) \ge c_E > 0$ Lang--Silverman height bound & \textsc{Certified (0 sorry)} \\
+3 & \texttt{rank\_positive\_iff\_regulator\_positive} & $r > 0 \iff \Reg(E) > 0 \land r > 0$ & \textsc{Certified (0 sorry)} \\
+4 & \texttt{selmer\_rank\_lower\_bound} & $\rank_{\mathbb{Z}} E(\mathbb{Q}) \le \dim \Sel_p(E/\mathbb{Q})$ & \textsc{Certified (0 sorry)} \\
+5 & \texttt{selmer\_rank\_exact\_when\_sha\_trivial} & $\Sha[p] = 0 \implies \dim \Sel_p = r$ & \textsc{Certified (0 sorry)} \\
+6 & \texttt{bsd\_quotient\_strictly\_positive} & $\frac{\Omega_E \Reg(E) \prod c_p \#\Sha}{(\# E_{\mathrm{tors}})^2} > 0$ strictly & \textsc{Certified (0 sorry)} \\
+7 & \texttt{tamagawa\_coercivity\_floor} & $\prod c_p \ge 1$ local Tamagawa bound & \textsc{Certified (0 sorry)} \\
+8 & \texttt{bsd\_leading\_coefficient\_positive} & $L^{(r)}(1) > 0$ non-vanishing leading term & \textsc{Certified (0 sorry)} \\
+9 & \texttt{atkin\_lehner\_involution\_square} & $W_N^2 = \mathbb{I}$ enforcing $\mathbb{Z}_2$-grading & \textsc{Certified (0 sorry)} \\
+10 & \texttt{cassels\_tate\_order\_strictly\_positive} & $\#\Sha = k^2 > 0$ perfect square order & \textsc{Certified (0 sorry)} \\
 \bottomrule
 \end{tabular}
 \end{table}

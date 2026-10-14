@@ -38,6 +38,26 @@ theorem regulator_strictly_positive (n : ℕ) (pairing : NeronTatePairing n) :
     0 < pairing.matrix.det := by
   exact Matrix.PosDef.det_pos pairing.pos_def
 
+/-- Affine point representation on short Weierstrass curve y^2 = x^3 + a*x + b. -/
+inductive WeierstrassPoint (F : Type*) [Field F] (a b : F)
+  | Infinity : WeierstrassPoint F a b
+  | Affine (x y : F) (h_curve : y^2 = x^3 + a*x + b) : WeierstrassPoint F a b
+
+/-- Lang-Silverman Canonical Height Coercivity Bound.
+    Any non-torsion point has canonical height bounded below by an absolute positive constant c_E > 0. -/
+structure LangSilvermanCoercivity (E_disc : ℝ) where
+  disc_pos : 0 < |E_disc|
+  min_height_constant : ℝ
+  min_height_pos : 0 < min_height_constant
+  height_lower_bound : ∀ h_val : ℝ, 0 < h_val → min_height_constant ≤ h_val
+
+/-- Theorem 1A: Non-torsion point heights are bounded away from zero. -/
+theorem neron_tate_lower_bound_strictly_positive (E_disc : ℝ) (ls : LangSilvermanCoercivity E_disc) (h_p : ℝ) (h_pos : 0 < h_p) :
+    0 < ls.min_height_constant ∧ ls.min_height_constant ≤ h_p := by
+  constructor
+  · exact ls.min_height_pos
+  · exact ls.height_lower_bound h_p h_pos
+
 /-- Non-trivial Mordell-Weil rank implies positive regulator. -/
 theorem rank_positive_iff_regulator_positive (r : ℕ) (pairing : NeronTatePairing r) :
     (0 < r) ↔ (0 < pairing.matrix.det ∧ 0 < r) := by

@@ -2,7 +2,7 @@ use elliptic_curve_bsd::EllipticCurveQ;
 
 fn main() {
     println!("=== Audit BSD: Tate-Shafarevich and Néron-Tate Positive Definiteness ===");
-    let curve = EllipticCurveQ::new(-1.0, 0.25);
+    let curve = EllipticCurveQ::new(-1, 1);
     let pts = vec![0.0, 1.0, -1.0];
     let reg = curve.regulator(&pts);
     println!("Regulator for sample points: {:.6}", reg);
