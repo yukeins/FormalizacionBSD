@@ -7,7 +7,10 @@
 //! 4. Tate series canonical height h_hat(P) and Gram regulator matrices.
 //! 5. 2-descent Selmer rank bounding and Cassels-Tate skew-symmetry.
 
+pub mod spectral;
+
 use nalgebra::DMatrix;
+use rayon::prelude::*;
 
 /// Weierstrass model of an integer elliptic curve E over Q: y^2 = x^3 + a*x + b
 #[derive(Debug, Clone)]
@@ -49,16 +52,22 @@ impl EllipticCurveQ {
         p + 1 - count
     }
 
-    /// Generate prime Fourier coefficients a_p up to bound P_max
+    /// Generate prime Fourier coefficients a_p up to bound P_max (sequential)
     pub fn compute_a_p_sieve(&self, p_max: usize) -> Vec<(i64, i64)> {
         let primes = sieve_primes(p_max);
         primes.into_iter().map(|p| (p as i64, self.compute_a_p(p as i64))).collect()
     }
 
+    /// High-throughput multithreaded parallel sieve for a_p via Rayon (transferred from NS/RH engines)
+    pub fn compute_a_p_sieve_parallel(&self, p_max: usize) -> Vec<(i64, i64)> {
+        let primes = sieve_primes(p_max);
+        primes.into_par_iter().map(|p| (p as i64, self.compute_a_p(p as i64))).collect()
+    }
+
     /// Real fundamental period Omega_E via Arithmetic-Geometric Mean (AGM)
     pub fn real_period_agm(&self) -> f64 {
         let a_f = self.a as f64;
-        let b_f = self.b as f64;
+        let _b_f = self.b as f64;
         let disc = self.discriminant() as f64;
         if disc > 0.0 {
             let (e1, e2, e3) = self.real_roots_3();
@@ -292,5 +301,13 @@ mod tests {
         assert!(a0.bsd_ratio_discrepancy < 1e-4);
         assert!(a1.bsd_ratio_discrepancy < 1e-4);
         assert!(a2.bsd_ratio_discrepancy < 1e-4);
+    }
+
+    #[test]
+    fn test_parallel_point_counting_consistency() {
+        let curve = EllipticCurveQ::new(-1, 1);
+        let seq = curve.compute_a_p_sieve(200);
+        let par = curve.compute_a_p_sieve_parallel(200);
+        assert_eq!(seq, par);
     }
 }
