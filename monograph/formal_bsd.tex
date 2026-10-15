@@ -314,7 +314,15 @@ Taking the limit as $k \to \infty$, the quadratic form evaluates to:
 \begin{equation}
     v^T G v = \hat{h}\left( \sum_{i=1}^r v_i P_i \right) > 0.
 \end{equation}
-If $v^T G v = 0$, then the vector $\sum v_i P_i = 0$ in $\mathcal{H}_{\mathrm{MW}}$, forcing $v_1 = \dots = v_r = 0$ by linear independence. Hence all eigenvalues $\lambda_k(G)$ are strictly positive real numbers, and their product $\det(G) = \Reg(E)$ is strictly positive.
+By the Courant--Fischer min-max theorem for symmetric real matrices, the minimal eigenvalue is given by the Rayleigh quotient infimum:
+\begin{equation}
+    \lambda_{\min}(G) = \inf_{w \in \mathbb{R}^r \setminus \{0\}} \frac{w^T G w}{\|w\|^2} \ge \inf_{w \in S^{r-1}} \hat{h}\left( \sum_{i=1}^r w_i P_i \right) \ge c_E > 0.
+\end{equation}
+Because all eigenvalues satisfy $\lambda_k(G) \ge \lambda_{\min}(G) \ge c_E > 0$, the determinant (arithmetic regulator) satisfies the uniform coercivity bound:
+\begin{equation}
+    \Reg(E) = \det(G) = \prod_{k=1}^r \lambda_k(G) \ge (\lambda_{\min}(G))^r \ge (c_E)^r > 0,
+\end{equation}
+precluding any spectral degeneracy or vanishing of the regulator.
 \end{proof}
 
 ---
