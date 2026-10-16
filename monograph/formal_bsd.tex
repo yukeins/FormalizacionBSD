@@ -73,7 +73,7 @@ The complete deductive framework is mechanically certified in Lean~4 with Mathli
 \section*{Preface and Foundations of the Framework}
 \addcontentsline{toc}{section}{Preface and Foundations of the Framework}
 
-The Birch and Swinnerton-Dyer Conjecture, formulated by B.~Birch, H.~Swinnerton-Dyer, and J.~Tate, stands as one of the central problems in modern arithmetic geometry.\footnote{J.~Tate, \emph{On the conjectures of Birch and Swinnerton-Dyer and a geometric analog}, Séminaire Bourbaki \textbf{9} (1966), no.~306, 415--440; B.~J.~Birch and H.~P.~F.~Swinnerton-Dyer, \emph{Notes on elliptic curves. II}, J. Reine Angew. Math. \textbf{218} (1965), 79--108.} Classical approaches address the conjecture by segmenting it into isolated algebraic, modular, and $p$-adic frameworks, creating substantial barriers when attempting to extend results beyond analytic ranks $r \le 1$.
+The Birch and Swinnerton-Dyer Conjecture, formulated by Birch, Swinnerton-Dyer, and Tate \cite{birch_swinnerton_dyer_1965, tate_cmi_2006}, stands as one of the central problems in modern arithmetic geometry. Classical approaches address the conjecture by segmenting it into isolated algebraic, modular, and $p$-adic frameworks, creating substantial barriers when attempting to extend results beyond analytic ranks $r \le 1$.
 
 In this treatise, we examine an arithmetic framework that treats the elliptic curve $E/\mathbb{Q}$ and its Hasse--Weil $L$-function $L(E, s)$ not as isolated arithmetic phenomena, but as dual projections of an integrated arithmetic system:
 \begin{equation}
@@ -98,18 +98,18 @@ Let $E$ be an elliptic curve defined over the rational numbers $\mathbb{Q}$ of c
     \label{eq:weierstrass_model}
     y^2 + a_1 xy + a_3 y = x^3 + a_2 x^2 + a_4 x + a_6, \quad a_i \in \mathbb{Z},
 \end{equation}
-with discriminant $\Delta_E \neq 0$. By the celebrated Mordell--Weil Theorem,\footnote{L.~J.~Mordell, \emph{On the rational solutions of the indeterminate equations of the third and fourth degrees}, Proc. Cambridge Philos. Soc. \textbf{21} (1922), 179--192; A.~Weil, \emph{Sur un théorème de Mordell}, Bull. Sci. Math. \textbf{53} (1929), 182--191.} the abelian group of rational points $E(\mathbb{Q})$ is finitely generated:
+with discriminant $\Delta_E \neq 0$. By the Mordell--Weil Theorem \cite{mordell_1922, weil_1929}, the abelian group of rational points $E(\mathbb{Q})$ is finitely generated:
 \begin{equation}
     \label{eq:mordell_weil_structure}
     E(\mathbb{Q}) \cong \mathbb{Z}^r \oplus E(\mathbb{Q})_{\mathrm{tors}},
 \end{equation}
-where $r = \rank_{\mathbb{Z}} E(\mathbb{Q}) \in \mathbb{N}$ denotes the algebraic rank and $E(\mathbb{Q})_{\mathrm{tors}}$ is the finite torsion subgroup, classified by Mazur's Torsion Theorem into one of 15 admissible torsion configurations.\footnote{B.~Mazur, \emph{Modular curves and the Eisenstein ideal}, Publ. Math. IHÉS \textbf{47} (1977), 33--186.}
+where $r = \rank_{\mathbb{Z}} E(\mathbb{Q}) \in \mathbb{N}$ denotes the algebraic rank and $E(\mathbb{Q})_{\mathrm{tors}}$ is the finite torsion subgroup, classified by Mazur's Torsion Theorem \cite{mazur_1977} into one of 15 admissible torsion configurations.
 
 For each prime $p$, let $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$ denote the finite field of $p$ elements, and let $\#E(\mathbb{F}_p)$ be the number of points on the reduced curve over $\mathbb{F}_p$, including the point at infinity $\mathcal{O}$. The Frobenius trace at $p$ is defined as:
 \begin{equation}
     a_p = p + 1 - \#E(\mathbb{F}_p).
 \end{equation}
-By Hasse's Theorem on elliptic curves,\footnote{H.~Hasse, \emph{Zur Theorie der abstrakten elliptischen Funktionenkörper I, II, III}, J. Reine Angew. Math. \textbf{175} (1936), 55--62, 69--88, 193--208.} the Frobenius trace satisfies the fundamental bound:
+By Hasse's Theorem on elliptic curves \cite{hasse_1936}, the Frobenius trace satisfies the fundamental bound:
 \begin{equation}
     |a_p| \le 2\sqrt{p}.
 \end{equation}
@@ -118,7 +118,7 @@ The normalized Hasse--Weil $L$-function $L(E, s)$ is defined for complex $s \in 
     \label{eq:l_function_euler}
     L(E, s) = \prod_{p \nmid N} \left( 1 - a_p p^{-s} + p^{1 - 2s} \right)^{-1} \cdot \prod_{p \mid N} \left( 1 - a_p p^{-s} \right)^{-1}.
 \end{equation}
-By the Modularity Theorem (formerly the Taniyama--Shimura--Weil Conjecture), proved by Wiles, Taylor--Wiles, and Breuil--Conrad--Diamond--Taylor,\footnote{A.~Wiles, \emph{Modular elliptic curves and Fermat's Last Theorem}, Ann. of Math. \textbf{141} (1995), 443--551; R.~Taylor and A.~Wiles, \emph{Ring-theoretic properties of certain Hecke algebras}, Ann. of Math. \textbf{141} (1995), 553--572; C.~Breuil, B.~Conrad, F.~Diamond, and R.~Taylor, \emph{On the modularity of elliptic curves over $\mathbb{Q}$}, J. Amer. Math. Soc. \textbf{14} (2001), 843--939.} there exists a normalized cuspidal Hecke newform $f_E(\tau) \in S_2(\Gamma_0(N))$ with Fourier expansion:
+By the Modularity Theorem \cite{wiles_1995, taylor_wiles_1995, breuil_conrad_diamond_taylor_2001}, there exists a normalized cuspidal Hecke newform $f_E(\tau) \in S_2(\Gamma_0(N))$ with Fourier expansion:
 \begin{equation}
     f_E(\tau) = \sum_{n=1}^\infty a_n q^n, \quad q = e^{2\pi i \tau}, \quad a_1 = 1,
 \end{equation}
@@ -218,7 +218,7 @@ Let $E/\mathbb{Q}$ be an elliptic curve given by the Weierstrass equation \eqref
 \end{equation}
 The naive height satisfies the quasi-quadratic identity $h_x(2P) = 4 h_x(P) + O(1)$, where the implied constant depends exclusively on the Weierstrass coefficients $a_i$ in \eqref{eq:weierstrass_model}. 
 
-Following Néron and Tate,\footnote{A.~Néron, \emph{Quasi-fonctions et hauteurs sur les variétés abéliennes}, Ann. of Math. \textbf{82} (1965), 249--331; J.~Tate, \emph{The arithmetic of elliptic curves}, Invent. Math. \textbf{23} (1974), 179--206.} the canonical height $\hat{h}: E(\mathbb{Q}) \to \mathbb{R}_{\ge 0}$ is constructed as the uniform limit of Tate's telescoping series:
+Following Néron and Tate \cite{neron_1965, tate_1974}, the canonical height $\hat{h}: E(\mathbb{Q}) \to \mathbb{R}_{\ge 0}$ is constructed as the uniform limit of Tate's telescoping series:
 \begin{equation}
     \label{eq:tate_limit}
     \hat{h}(P) \coloneqq \lim_{n \to \infty} \frac{h_x(2^n P)}{4^n} = \frac{1}{2} h_x(P) + \frac{1}{2} \sum_{n=0}^\infty \frac{h_x(2^{n+1} P) - 4 h_x(2^n P)}{4^{n+1}}.
@@ -269,7 +269,7 @@ Let $P \in E(\mathbb{Q})$. If $\hat{h}(P) = 0$, then for all $m \in \mathbb{Z}_{
 \begin{equation}
     h_x(mP) \le C_E < \infty.
 \end{equation}
-By Northcott's finiteness theorem on heights,\footnote{D.~G.~Northcott, \emph{An inequality in the theory of arithmetic on algebraic varieties}, Proc. Cambridge Philos. Soc. \textbf{45} (1949), 502--509.} the set $\{Q \in E(\mathbb{Q}) : h_x(Q) \le C_E\}$ is finite. Therefore, the infinite sequence $\{mP\}_{m=1}^\infty$ must contain duplicate elements, implying there exist $m_1 \ne m_2$ such that $m_1 P = m_2 P$, so $(m_1 - m_2) P = \mathcal{O}$. Hence $P$ is a torsion point.
+By Northcott's finiteness theorem on heights \cite{northcott_1949}, the set $\{Q \in E(\mathbb{Q}) : h_x(Q) \le C_E\}$ is finite. Therefore, the infinite sequence $\{mP\}_{m=1}^\infty$ must contain duplicate elements, implying there exist $m_1 \ne m_2$ such that $m_1 P = m_2 P$, so $(m_1 - m_2) P = \mathcal{O}$. Hence $P$ is a torsion point.
 
 Conversely, if $P$ is non-torsion, $P$ cannot belong to the finite set $E(\mathbb{Q})_{\mathrm{tors}}$. Because Northcott's theorem implies that the spectrum of $\hat{h}$ on $E(\mathbb{Q})$ is discrete and closed with only non-negative values, the infimum over non-torsion points is achieved:
 \begin{equation}
@@ -410,7 +410,7 @@ Subtracting $\dim_{\mathbb{F}_p} E(\mathbb{Q})[p]$ establishes the bound.
 
 \subsection{The Cassels--Tate Pairing and Finiteness of $\Sha$}
 
-The structural integrity of $\Sha(E/\mathbb{Q})$ is governed by the Cassels--Tate pairing,\footnote{J.~W.~S.~Cassels, \emph{Arithmetic on curves of genus 1. IV. Proof of the Hauptvermutung}, J. Reine Angew. Math. \textbf{211} (1962), 95--112; J.~Tate, \emph{Duality theorems in Galois cohomology over number fields}, Proc. Internat. Congr. Mathematicians (Stockholm, 1962), pp.~288--295.} derived from the canonical Weil pairing on torsion points $e_n: E[n] \times E[n] \to \mu_n$. In the language of Galois cohomology, for any local completions $v$, the local invariant map $\mathrm{inv}_v: H^2(\mathbb{Q}_v, \overline{\mathbb{Q}}_v^\times) \xrightarrow{\sim} \mathbb{Q}/\mathbb{Z}$ induces a global cup product structure. For classes $a, b \in \Sha(E/\mathbb{Q})$, the pairing is explicitly constructed via the connecting homomorphism $\delta$:
+The structural integrity of $\Sha(E/\mathbb{Q})$ is governed by the Cassels--Tate pairing \cite{cassels_1962, tate_icm_1962}, derived from the canonical Weil pairing on torsion points $e_n: E[n] \times E[n] \to \mu_n$. In the language of Galois cohomology, for any local completions $v$, the local invariant map $\mathrm{inv}_v: H^2(\mathbb{Q}_v, \overline{\mathbb{Q}}_v^\times) \xrightarrow{\sim} \mathbb{Q}/\mathbb{Z}$ induces a global cup product structure. For classes $a, b \in \Sha(E/\mathbb{Q})$, the pairing is explicitly constructed via the connecting homomorphism $\delta$:
 \begin{equation}
     \langle a, b \rangle_{\mathrm{CT}} = \sum_{v \le \infty} \mathrm{inv}_v \left( a_v \cup \delta(b_v) \right) \in \mathbb{Q}/\mathbb{Z}.
 \end{equation}
@@ -433,7 +433,7 @@ In particular, $\#\Sha(E/\mathbb{Q}) \ge 1 > 0$ unconditionally.
 \begin{proof}
 Let $\Sha(E/\mathbb{Q})[p^\infty]$ denote the $p$-primary component. The alternating condition $\langle \xi, \xi \rangle_{\mathrm{CT}} = 0$ implies skew-symmetry: $\langle \xi, \eta \rangle_{\mathrm{CT}} = -\langle \eta, \xi \rangle_{\mathrm{CT}}$. 
 
-By Poitou--Tate duality,\footnote{J.~Neukirch, A.~Schmidt, and K.~Wingberg, \emph{Cohomology of Number Fields}, 2nd ed., Grundlehren der mathematischen Wissenschaften \textbf{323}, Springer, 2008.} the pairing induces a non-degenerate alternating form on the finite abelian group $G = \Sha(E/\mathbb{Q})/\Sha(E/\mathbb{Q})_{\mathrm{div}}$. Standard symplectic linear algebra over finite fields and $\mathbb{Z}/p^k\mathbb{Z}$ dictates that any finite abelian group equipped with a non-degenerate alternating bilinear form into $\mathbb{Q}/\mathbb{Z}$ has the decomposition:
+By Poitou--Tate duality \cite{neukirch_schmidt_wingberg}, the pairing induces a non-degenerate alternating form on the finite abelian group $G = \Sha(E/\mathbb{Q})/\Sha(E/\mathbb{Q})_{\mathrm{div}}$. Standard symplectic linear algebra over finite fields and $\mathbb{Z}/p^k\mathbb{Z}$ dictates that any finite abelian group equipped with a non-degenerate alternating bilinear form into $\mathbb{Q}/\mathbb{Z}$ has the decomposition:
 \begin{equation}
     G \cong \bigoplus_{i=1}^m \left( \mathbb{Z}/d_i \mathbb{Z} \oplus \mathbb{Z}/d_i \mathbb{Z} \right), \quad d_i \mid d_{i+1}.
 \end{equation}
@@ -538,7 +538,7 @@ The transfer operator $\mathcal{T}_E = \bigoplus_{p} \mathcal{T}_{E, p}$ decompo
 \begin{equation}
     \mathcal{T}_{E, p} = p^{-1/2} \begin{pmatrix} a_p & -p \\ 1 & 0 \end{pmatrix}.
 \end{equation}
-The algebraic points in $E(\mathbb{Q})$ correspond to cohomological zero modes of $\mathbb{I} - \mathcal{T}_E$. By the Eichler--Shimura isomorphism:\footnote{M.~Eichler, \emph{Quaternäre quadratische Formen und die Riemannsche Vermutung für die Kongruenzzetafunktion}, Arch. Math. \textbf{5} (1954), 355--366; G.~Shimura, \emph{Correspondances modulaires et les fonctions $\zeta$ de courbes algébriques}, J. Math. Soc. Japan \textbf{10} (1958), 1--28.}
+The algebraic points in $E(\mathbb{Q})$ correspond to cohomological zero modes of $\mathbb{I} - \mathcal{T}_E$. By the Eichler--Shimura isomorphism \cite{eichler_1954, shimura_1958}:
 \begin{equation}
     H^1(X_0(N), \mathbb{R}) \cong S_2(\Gamma_0(N)) \oplus \overline{S_2(\Gamma_0(N))},
 \end{equation}
@@ -564,7 +564,7 @@ This completes the commutativity of the left-hand square of \eqref{eq:master_cat
 \subsection{Iwasawa--Kato Cyclotomic Descent along $\mathbb{Z}_p$-Towers}
 \label{subsec:iwasawa_kato_descent}
 
-To control the algebraic and $p$-adic descent limits and establish uniform stability across infinite towers of number fields, we formulate the canonical multiscale descent along cyclotomic $\mathbb{Z}_p$-extensions following Mazur and Kato.\footnote{B.~Mazur, \emph{Rational points of abelian varieties with values in towers of number fields}, Invent. Math. \textbf{18} (1972), 183--266; K.~Kato, \emph{$p$-adic Hodge theory and values of zeta functions of modular forms}, Astérisque \textbf{295} (2004), 117--290.} Let $\mathbb{Q}_\infty / \mathbb{Q}$ denote the cyclotomic $\mathbb{Z}_p$-extension with intermediate fields $\mathbb{Q}_k$ satisfying $[\mathbb{Q}_k : \mathbb{Q}] = p^k$. The canonical $p$-adic height pairing on $E(\mathbb{Q}_k \otimes \mathbb{Q}_p)$ decomposes into successive projection slices:
+To control the algebraic and $p$-adic descent limits and establish uniform stability across infinite towers of number fields, we formulate the canonical multiscale descent along cyclotomic $\mathbb{Z}_p$-extensions following Mazur and Kato \cite{mazur_1977, kato_2004}. Let $\mathbb{Q}_\infty / \mathbb{Q}$ denote the cyclotomic $\mathbb{Z}_p$-extension with intermediate fields $\mathbb{Q}_k$ satisfying $[\mathbb{Q}_k : \mathbb{Q}] = p^k$. The canonical $p$-adic height pairing on $E(\mathbb{Q}_k \otimes \mathbb{Q}_p)$ decomposes into successive projection slices:
 \begin{equation}
     \hat{h}_k(P) = \hat{h}_{k-1}(P) + \delta_k(P),
 \end{equation}
@@ -582,12 +582,12 @@ Consequently, the arithmetic regulator does not collapse under infinite field to
 \subsection{Geometric Analogue: Garcia--Stichtenoth Towers and Optimal Hecke Limits}
 \label{subsec:garcia_stichtenoth}
 
-To complement the cyclotomic Iwasawa descent over number fields with an exact geometric model where ramification is completely tamed, we analyze the behavior of elliptic curves and their Jacobians along asymptotically optimal towers of function fields. Let $\mathbb{F}_{q^2}$ be a finite field of square cardinality, and let $\mathcal{F} = (F_0, F_1, F_2, \dots)$ be the Garcia--Stichtenoth tower\footnote{A.~Garcia and H.~Stichtenoth, \emph{A tower of Artin--Schreier extensions of function fields attaining the Drinfeld--Vl\u{a}du\c{t} bound}, Invent. Math. \textbf{121} (1995), 211--222; \emph{On the asymptotic behaviour of some towers of function fields over finite fields}, J. Number Theory \textbf{61} (1996), 248--273.} defined recursively over $F_0 = \mathbb{F}_{q^2}(x_0)$ by:
+To complement the cyclotomic Iwasawa descent over number fields with an exact geometric model where ramification is completely tamed, we analyze the behavior of elliptic curves and their Jacobians along asymptotically optimal towers of function fields. Let $\mathbb{F}_{q^2}$ be a finite field of square cardinality, and let $\mathcal{F} = (F_0, F_1, F_2, \dots)$ be the Garcia--Stichtenoth tower \cite{garcia_stichtenoth_1995} defined recursively over $F_0 = \mathbb{F}_{q^2}(x_0)$ by:
 \begin{equation}
     \label{eq:gs_recursion}
     x_{n+1}^q + x_{n+1} = \frac{x_n^q}{x_n^{q-1} + 1}, \quad n \ge 0.
 \end{equation}
-By the work of Elkies,\footnote{N.~D.~Elkies, \emph{Explicit modular towers}, in: Proceedings of the Thirty-Fifth Annual Allerton Conference on Communication, Control, and Computing (1997), pp.~23--32; \emph{Modular curves and codes}, analytic and algebraic aspects, Harvard University, 2001.} this tower represents an explicit tower of modular curves $X_0(T^n)$ for rank-2 Drinfeld modules, matching the Drinfeld--Vl\u{a}du\c{t} limit:
+By the work of Elkies \cite{elkies_1998}, this tower represents an explicit tower of modular curves $X_0(T^n)$ for rank-2 Drinfeld modules, matching the Drinfeld--Vl\u{a}du\c{t} limit:
 \begin{equation}
     \lambda(\mathcal{F}) \coloneqq \lim_{n \to \infty} \frac{N(F_n)}{g(F_n)} = q - 1 = A(q^2).
 \end{equation}
@@ -665,7 +665,7 @@ and its order is an exact non-zero square $\#\Sha(E/F_n) = k_n^2$ satisfying the
 \end{corollary}
 
 \begin{proof}
-Let $\mathcal{E}_n \to C_n$ denote the Kodaira minimal elliptic surface associated to $E/F_n$. By the Artin--Tate formula for surfaces over finite fields (proved by Milne and Kato for elliptic surfaces):\footnote{J.~S.~Milne, \emph{On a conjecture of Artin and Tate}, Ann. of Math. \textbf{102} (1975), 517--533.}
+Let $\mathcal{E}_n \to C_n$ denote the Kodaira minimal elliptic surface associated to $E/F_n$. By the Artin--Tate formula for surfaces over finite fields (proved by Milne and Kato for elliptic surfaces) \cite{milne_1975, kato_2004}:
 \begin{equation}
     P_2(\mathcal{E}_n, q^{-s}) \sim \frac{(-1)^{\rho(\mathcal{E}_n) - 1} \#\Sha(E/F_n) \cdot \Reg(E/F_n)}{(\# E(F_n)_{\mathrm{tors}})^2} (1 - q^{1-s})^{\rho(\mathcal{E}_n)},
 \end{equation}
@@ -689,7 +689,7 @@ This monotonicity excludes non-linear oscillatory drifts in the canonical height
 \subsection{Fredholm Resolvent Trace Formula on Modular Cycles}
 \label{subsec:fredholm_trace}
 
-Let $\mathcal{L}_0(X_0(N))$ denote the set of primitive closed geodesics on the modular curve $X_0(N)$. By the Selberg--Eichler trace formula,\footnote{A.~Selberg, \emph{Harmonic analysis and discontinuous groups in weakly symmetric Riemannian spaces with applications to Dirichlet series}, J. Indian Math. Soc. \textbf{20} (1956), 47--87.} the trace of the heat semigroups of the modular Hecke operator satisfies:
+Let $\mathcal{L}_0(X_0(N))$ denote the set of primitive closed geodesics on the modular curve $X_0(N)$. By the Selberg--Eichler trace formula \cite{selberg_1956, eichler_1954}, the trace of the heat semigroups of the modular Hecke operator satisfies:
 \begin{equation}
     \label{eq:fredholm_trace}
     \Tr\left( e^{-\beta \mathcal{T}_E} \right) = \sum_{\gamma \in \mathcal{L}_0(X_0(N))} \frac{\ell(\gamma)}{2 \sinh(\ell(\gamma)/2)} e^{-\beta \lambda_\gamma},
@@ -1016,6 +1016,9 @@ N.~D.~Elkies, \emph{Explicit modular towers}, in: Proc. 35th Allerton Conf. on C
 
 \bibitem{milne_1975}
 J.~S.~Milne, \emph{On a conjecture of Artin and Tate}, Ann. of Math. \textbf{102} (1975), 517--533.
+
+\bibitem{selberg_1956}
+A.~Selberg, \emph{Harmonic analysis and discontinuous groups in weakly symmetric Riemannian spaces with applications to Dirichlet series}, J. Indian Math. Soc. \textbf{20} (1956), 47--87.
 \end{thebibliography}
 
 \end{document}
