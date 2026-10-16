@@ -3,6 +3,7 @@
 
 /// Computes all eigenvalues of a real symmetric matrix using the classical Jacobi rotation method.
 /// Guaranteed to converge for all positive-definite or symmetric matrices.
+#[allow(clippy::needless_range_loop)]
 pub fn jacobi_eigenvalues(matrix: &[Vec<f64>]) -> Vec<f64> {
     let n = matrix.len();
     if n == 0 {
