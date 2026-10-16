@@ -4,11 +4,26 @@
 [![Mathlib](https://img.shields.io/badge/Mathlib-verified-green.svg)](https://github.com/leanprover-community/mathlib4)
 [![Rust](https://img.shields.io/badge/rust-1.80%2B-orange.svg)](https://www.rust-lang.org/)
 [![License](https://img.shields.io/badge/license-Apache%202.0%20%2F%20MIT-blue.svg)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23410806.svg)](https://doi.org/10.5281/zenodo.23410806)
 [![Axioms](https://img.shields.io/badge/axioms-0%20sorry-success.svg)]()
 
 **Author:** R. Santiago Z. G.  
 **Affiliation:** Independent Researcher  
-**Focus:** Arithmetic-spectral relations for the Birch and Swinnerton-Dyer Formulas
+**Focus:** Arithmetic-spectral relations for the Birch and Swinnerton-Dyer Formulas  
+**Permanent Record (Zenodo DOI):** [10.5281/zenodo.23410806](https://doi.org/10.5281/zenodo.23410806)  
+
+### Citation
+
+```bibtex
+@article{zapata2026bsd,
+  author    = {Zapata, R. Santiago},
+  title     = {Hecke Transfer Operators, Canonical Height Coercivity, and the Birch and Swinnerton-Dyer Formulas},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23410806},
+  url       = {https://doi.org/10.5281/zenodo.23410806}
+}
+```
 
 ---
 

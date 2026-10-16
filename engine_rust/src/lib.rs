@@ -1,5 +1,10 @@
 //! EllipticCurveBSD: Deterministic Verification Engine for the Birch and Swinnerton-Dyer Conjecture
 //!
+//! Reference:
+//!   Zapata, R. S. (2026). Hecke Transfer Operators, Canonical Height Coercivity,
+//!   and the Birch and Swinnerton-Dyer Formulas. Zenodo.
+//!   https://doi.org/10.5281/zenodo.23410806
+//!
 //! Evaluates the 6-layer multirepresentational invariants:
 //! 1. Ab initio point counting on finite fields F_p to generate exact Hecke Fourier coefficients a_p.
 //! 2. Mellin transform fast evaluation of central derivatives L^(r)(E, 1) / r!.

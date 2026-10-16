@@ -9,6 +9,11 @@ import Mathlib.Algebra.Order.Field.Basic
 # Birch and Swinnerton-Dyer Formulas: Core Deductive Architecture
 # Under the Multirepresentational Construction-Reconstruction Framework
 
+Reference:
+  Zapata, R. S. (2026). Hecke Transfer Operators, Canonical Height Coercivity,
+  and the Birch and Swinnerton-Dyer Formulas. Zenodo.
+  https://doi.org/10.5281/zenodo.23410806
+
 This module formalizes the six-layer operator geometry of an elliptic curve E/ℚ:
 1. Spectral Layer (O_Sp): Hecke eigenvalues, central L-derivative, analytic rank.
 2. Geometric Layer (O_Ge): Real period integral, complex torus lattice C/Λ.

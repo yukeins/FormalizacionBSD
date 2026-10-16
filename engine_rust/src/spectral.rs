@@ -1,5 +1,9 @@
 //! Jacobi Spectral Diagonalization for Symmetric Real Gram Matrices.
-//! Transferred from the Riemann-Weil Positivity Engine.
+//!
+//! Reference:
+//!   Zapata, R. S. (2026). Hecke Transfer Operators, Canonical Height Coercivity,
+//!   and the Birch and Swinnerton-Dyer Formulas. Zenodo.
+//!   https://doi.org/10.5281/zenodo.23410806
 
 /// Computes all eigenvalues of a real symmetric matrix using the classical Jacobi rotation method.
 /// Guaranteed to converge for all positive-definite or symmetric matrices.
