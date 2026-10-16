@@ -20,3 +20,4 @@ monograph/*.fdb_latexmk
 Thumbs.db
 *.swp
 *~
+*.tar.gz

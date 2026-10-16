@@ -6,10 +6,10 @@ import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.Algebra.Order.Field.Basic
 
 /-!
-# Birch and Swinnerton-Dyer Conjecture (BSD): Core Deductive Architecture
-# Under the Multirepresentational Construction-Reconstruction Metamodel
+# Birch and Swinnerton-Dyer Formulas: Core Deductive Architecture
+# Under the Multirepresentational Construction-Reconstruction Framework
 
-This module formalizes the six-layer acorralamiento of an elliptic curve E/ℚ:
+This module formalizes the six-layer operator geometry of an elliptic curve E/ℚ:
 1. Spectral Layer (O_Sp): Hecke eigenvalues, central L-derivative, analytic rank.
 2. Geometric Layer (O_Ge): Real period integral, complex torus lattice C/Λ.
 3. Topological Layer (O_To): Selmer exact sequence, Tate-Shafarevich group Sha(E/ℚ).

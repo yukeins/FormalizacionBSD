@@ -39,7 +39,7 @@ FormalizacionBSD/
 ├── .gitignore                # Build artifact exclusions
 ├── monograph/                # Mathematical monograph in LaTeX
 │   ├── formal_bsd.tex        # Analytical treatise across the 6 representations
-│   └── formal_bsd.pdf        # Compiled monograph (20 pages)
+│   └── formal_bsd.pdf        # Compiled monograph (23 pages)
 ├── proofs_lean/              # Lean 4 formalization library with Mathlib
 │   ├── lean-toolchain        # Pinned Lean 4.34.1 toolchain
 │   ├── lakefile.lean         # Lake build configuration
@@ -47,7 +47,7 @@ FormalizacionBSD/
 └── engine_rust/              # Deterministic computational verification suite
     ├── Cargo.toml            # Engine dependencies
     └── src/                  # High-precision numerical algorithms
-        ├── lib.rs            # Core library and unit tests
+        ├── lib.rs            # Core library, Garcia-Stichtenoth model, unit tests
         ├── spectral.rs       # Jacobi spectral diagonalization
         └── bin/              # Verification binaries (bsd_spectral, audit_*)
 ```
@@ -66,7 +66,7 @@ Expected output:
 ```text
 Build completed successfully (2263 jobs).
 ```
-Verifies 15 core theorems with **0 sorry** and **0 unproven custom axioms**.
+Verifies 17 core theorems with **0 sorry** and **0 unproven custom axioms**.
 
 ### 3.2. Rust Computational Engine
 Ensure `cargo` (Rust 1.80+) is installed:
